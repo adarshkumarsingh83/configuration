@@ -1,24 +1,24 @@
 apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: eureka-server
-spec:
-  selector:
-    matchLabels:
-      app: eureka-server
-      tier: backend
-      track: stable
-  replicas: 1
-  template:
-    metadata:
-      labels:
+  kind: Deployment
+  metadata:
+    name: eureka-server
+  spec:
+    selector:
+      matchLabels:
         app: eureka-server
         tier: backend
         track: stable
-    spec:
-      containers:
-        - name: eureka-server
-          image: "adarshkumarsingh83/eureka-server:latest"
-          ports:
-            - name: http
-              containerPort: 8761
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          app: eureka-server
+          tier: backend
+          track: stable
+      spec:
+        containers:
+          - name: eureka-server
+            image: "adarshkumarsingh83/eureka-server:latest"
+            ports:
+              - name: http
+                containerPort: 8761
