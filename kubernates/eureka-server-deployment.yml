@@ -1,20 +1,13 @@
-apiVersion: apps/v1
+apiVersion: eureka/v1
   kind: Deployment
   metadata:
     name: eureka-server
   spec:
-    selector:
-      matchLabels:
-        app: eureka-server
-        tier: backend
-        track: stable
     replicas: 1
     template:
       metadata:
         labels:
           app: eureka-server
-          tier: backend
-          track: stable
       spec:
         containers:
           - name: eureka-server
